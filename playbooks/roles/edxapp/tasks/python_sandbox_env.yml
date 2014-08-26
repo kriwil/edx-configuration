@@ -1,3 +1,11 @@
+# Set the alternatives this way for blas and lapack to work correctly for the 
+# MITx 6.341x course.
+- name: code sandbox | Use libblas for 3gf
+  alternatives: name="libblas.so.3gf" path="/usr/lib/libblas/libblas.so.3gf"
+
+- name: code sandbox | Use liblapac for 3gf
+  alteratives: name="liblapack.so.3gf" path="/usr/lib/lapack/liblapack.so.3gf"
+
 - name: code sandbox | Create edxapp sandbox user
   user: name={{ edxapp_sandbox_user }} shell=/bin/false home={{ edxapp_sandbox_venv_dir }}
   notify:
